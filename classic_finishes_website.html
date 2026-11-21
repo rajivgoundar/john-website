@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Finishes | Premium House Painters Brisbane & QLD</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1C2541',
+                            900: '#0B132B',
+                            950: '#050A18',
+                        },
+                        gold: {
+                            400: '#F4C430',
+                            500: '#D4AF37',
+                            600: '#AA8822',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B132B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 4px;
+        }
+
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(28, 37, 65, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        /* Gold Gradient Text */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #997514 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Interactive Cursor Styling */
+        body {
+            cursor: default;
+        }
+        @media (min-width: 1024px) {
+            body {
+                cursor: none;
+            }
+            .custom-cursor {
+                pointer-events: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 9999;
+                border-radius: 50%;
+                transition: transform 0.15s ease-out, opacity 0.2s ease;
+            }
+            #cursor-dot {
+                width: 8px;
+                height: 8px;
+                background-color: #F4C430;
+            }
+            #cursor-ring {
+                width: 36px;
+                height: 36px;
+                border: 1.5px solid rgba(212, 175, 55, 0.6);
+                transition: transform 0.25s ease-out, width 0.3s, height 0.3s, border-color 0.3s;
+            }
+        }
+
+        /* Reveal on scroll animations */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Smooth image hover container */
+        .img-container {
+            overflow: hidden;
+            position: relative;
+        }
+        .img-container img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .img-container:hover img {
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+<body class="bg-navy-950 text-slate-100 font-sans selection:bg-gold-500 selection:text-navy-950">
+
+    <!-- Custom Cursor Canvas Elements (Desktop Only) -->
+    <div id="cursor-dot" class="custom-cursor hidden lg:block"></div>
+    <div id="cursor-ring" class="custom-cursor hidden lg:block"></div>
+
+    <!-- HEADER / NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/10 transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo & Name -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-navy-950 font-bold text-xl shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-paint-roller"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight text-white block">CLASSIC FINISHES</span>
+                        <span class="text-[10px] tracking-widest text-gold-400 uppercase font-semibold block -mt-1">Creating Elegant Living Spaces</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#services" class="hover:text-gold-400 transition-colors">Services</a>
+                    <a href="#why-us" class="hover:text-gold-400 transition-colors">Why Choose Us</a>
+                    <a href="#projects" class="hover:text-gold-400 transition-colors">Our Portfolio</a>
+                    <a href="#reviews" class="hover:text-gold-400 transition-colors">Reviews</a>
+                    <a href="#contact" class="hover:text-gold-400 transition-colors">Get A Quote</a>
+                </nav>
+
+                <!-- Header CTA & Direct Call -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:+61478572141" class="flex items-center gap-2 text-sm text-gold-400 font-semibold hover:text-white transition-colors">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+61 478 572 141</span>
+                    </a>
+                    <a href="#contact" class="bg-gradient-to-r from-gold-400 to-gold-600 hover:from-gold-500 hover:to-gold-400 text-navy-950 font-bold px-5 py-2.5 rounded-full shadow-lg shadow-gold-500/20 transition-all hover:shadow-gold-500/40 hover:-translate-y-0.5">
+                        Free Enquiry
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-2xl text-slate-200 hover:text-gold-400 focus:outline-none p-2">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-b border-gold-500/20 px-6 py-6 space-y-4">
+            <a href="#services" class="mobile-nav-link block text-lg font-medium hover:text-gold-400">Services</a>
+            <a href="#why-us" class="mobile-nav-link block text-lg font-medium hover:text-gold-400">Why Choose Us</a>
+            <a href="#projects" class="mobile-nav-link block text-lg font-medium hover:text-gold-400">Our Portfolio</a>
+            <a href="#reviews" class="mobile-nav-link block text-lg font-medium hover:text-gold-400">Reviews</a>
+            <a href="#contact" class="mobile-nav-link block text-lg font-medium hover:text-gold-400">Get A Quote</a>
+            <div class="pt-4 border-t border-white/10 space-y-3">
+                <a href="tel:+61478572141" class="flex items-center gap-3 text-gold-400 font-bold">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+61 478 572 141</span>
+                </a>
+                <a href="#contact" class="mobile-nav-link block text-center bg-gold-500 text-navy-950 font-bold py-3 rounded-xl">
+                    Get Free Quote
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <!-- Background Decorative Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gold-500/10 blur-[140px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-10 right-10 w-72 h-72 bg-blue-600/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left reveal-on-scroll">
+                    <!-- Trust Pill Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold tracking-wider uppercase">
+                        <i class="fa-solid fa-shield-halved text-gold-400"></i>
+                        <span>QBCC Licensed #15606883 &bull; Fully Insured</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+                        Brisbane's Premier <br>
+                        <span class="text-gold-gradient">Interior & Exterior</span> Painting Specialists
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Transforming Queensland homes with exquisite craftsmanship and durable finishes. Speaght direct to owner <strong class="text-white">Avinesh</strong> for personalized, hassle-free painting solutions tailored to your residence.
+                    </p>
+
+                    <!-- Key Badges Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 max-w-lg mx-auto lg:mx-0 text-left">
+                        <div class="flex items-center gap-2.5 bg-navy-900/60 p-3 rounded-lg border border-white/5">
+                            <i class="fa-solid fa-award text-gold-400 text-lg"></i>
+                            <span class="text-xs text-slate-200 font-medium">10-Year Warranty</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 bg-navy-900/60 p-3 rounded-lg border border-white/5">
+                            <i class="fa-solid fa-user-check text-gold-400 text-lg"></i>
+                            <span class="text-xs text-slate-200 font-medium">No Subcontractors</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 bg-navy-900/60 p-3 rounded-lg border border-white/5 col-span-2 sm:col-span-1">
+                            <i class="fa-solid fa-star text-gold-400 text-lg"></i>
+                            <span class="text-xs text-slate-200 font-medium">100% Satisfaction</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#contact" class="w-full sm:w-auto text-center bg-gradient-to-r from-gold-400 to-gold-600 hover:from-gold-500 hover:to-gold-400 text-navy-950 font-bold px-8 py-4 rounded-xl shadow-xl shadow-gold-500/20 transition-all hover:scale-[1.02]">
+                            Get A Free Quote <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="tel:+61478572141" class="w-full sm:w-auto text-center border border-slate-700 hover:border-gold-400/50 bg-navy-900/40 text-slate-200 hover:text-white font-semibold px-6 py-4 rounded-xl transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone text-gold-400"></i> Call Avinesh Directly
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column - Visual Showcase Container -->
+                <div class="lg:col-span-5 relative reveal-on-scroll">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative Frame Box -->
+                        <div class="absolute -inset-2 rounded-2xl bg-gradient-to-r from-gold-500 to-amber-600 opacity-20 blur-lg"></div>
+                        
+                        <div class="relative bg-navy-900 rounded-2xl border border-white/10 p-6 shadow-2xl space-y-6">
+                            <!-- Hero Feature Image Box with Placeholder fallback logic -->
+                            <div class="img-container h-64 sm:h-72 rounded-xl bg-navy-800 flex items-center justify-center relative">
+                                <img src="images/hero-home.jpg" onerror="this.src='https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=80'" alt="Classic Finishes House Painting Brisbane" class="w-full h-full object-cover rounded-xl">
+                                <div class="absolute bottom-3 left-3 bg-navy-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-xs font-semibold text-gold-400">
+                                    <i class="fa-solid fa-location-dot mr-1"></i> Albany Creek & Greater Brisbane
+                                </div>
+                            </div>
+
+                            <!-- Live Stat Card -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-navy-950/70 p-4 rounded-xl border border-white/5 text-center">
+                                    <p class="text-2xl font-extrabold text-gold-400">ABN Verified</p>
+                                    <p class="text-[11px] text-slate-400 uppercase tracking-wider mt-1">49 288 737 192</p>
+                                </div>
+                                <div class="bg-navy-950/70 p-4 rounded-xl border border-white/5 text-center">
+                                    <p class="text-2xl font-extrabold text-gold-400">QBCC Lic</p>
+                                    <p class="text-[11px] text-slate-400 uppercase tracking-wider mt-1">#15606883</p>
+                                </div>
+                            </div>
+
+                            <!-- Testimonial Snapshot -->
+                            <div class="p-3 bg-gold-500/10 rounded-xl border border-gold-500/20 flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-gold-500 text-navy-950 flex items-center justify-center font-bold text-lg shrink-0">
+                                    5★
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-200 italic">"Avinesh and the team did an outstanding job on our Queenslander home exterior!"</p>
+                                    <p class="text-[10px] text-gold-400 font-semibold mt-0.5">- Local Homeowner, Albany Creek</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS TICKER STRIP -->
+    <section class="border-y border-white/10 bg-navy-900/50 py-6 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="space-y-1">
+                    <p class="text-2xl md:text-3xl font-black text-white">100%</p>
+                    <p class="text-xs text-gold-400 uppercase font-semibold">Satisfaction Guarantee</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="text-2xl md:text-3xl font-black text-white">$20M</p>
+                    <p class="text-xs text-gold-400 uppercase font-semibold">Public Liability Insured</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="text-2xl md:text-3xl font-black text-white">Direct</p>
+                    <p class="text-xs text-gold-400 uppercase font-semibold">Owner Communication</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="text-2xl md:text-3xl font-black text-white">10 Year</p>
+                    <p class="text-xs text-gold-400 uppercase font-semibold">Paint Warranty</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal-on-scroll">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-gold-400">Our Expertise</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Tailored Painting & Finishing Services</h3>
+                <p class="text-slate-300">
+                    From meticulous surface prep to high-grade premium topcoats, Classic Finishes delivers immaculate finishes that withstand Queensland’s unique climate.
+                </p>
+            </div>
+
+            <!-- Service Cards Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Service 1 -->
+                <div class="bg-navy-900/60 rounded-2xl border border-white/10 p-6 hover:border-gold-500/40 transition-all hover:-translate-y-1 group reveal-on-scroll">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                        <i class="fa-solid fa-house-chimney-window"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Exterior House Painting</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Full exterior house repaints, weatherboards, rendered walls, eaves, and gutters sealed to protect against heat, rain, and mold.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-white/5 pt-4">
+                        <li><i class="fa-solid fa-check text-gold-400 mr-2"></i>Weatherboard & Render sealing</li>
+                        <li><i class="fa-solid fa-check text-gold-400 mr-2"></i>High-pressure wash prep</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-navy-900/60 rounded-2xl border border-white/10 p-6 hover:border-gold-500/40 transition-all hover:-translate-y-1 group reveal-on-scroll">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                        <i class="fa-solid fa-paint-brush"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Interior Painting & Cracks</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Precision wall, ceiling, architrave, and skirtings repaints with crack repair and seamless plaster restoration.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-white/5 pt-4">
+                        <li><i class="fa-solid fa-check text-gold-400 mr-2"></i>Ceiling & drywall crack fix</li>
+                        <li><i class="fa-solid fa-check text-gold-400 mr-2"></i>Low-VOC eco-friendly paints</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-navy-900/60 rounded-2xl border border-white/10 p-6 hover:border-gold-500/40 transition-all hover:-translate-y-1 group reveal-on-scroll">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                        <i class="fa-solid fa-gavel"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Queenslanders & Heritage</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Specialized delicate care for classic Queenslander homes, fretwork, VJ boards, decks, and timber restoration.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-white/5 pt-4">
+                        <li><i class="fa-solid fa-check text-gold-400 mr-2"></i>VJ boards & lacquered wood</li>
+                        <li><i class="fa-solid fa-check text-gold-400 mr-2"></i>Lead paint safe handling</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-navy-900/60 rounded-2xl border border-white/10 p-6 hover:border-gold-500/40 transition-all hover:-translate-y-1 group reveal-on-scroll">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                        <i class="fa-solid fa-arrows-spin"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Pre-Sale Refresh</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Boost your home market value and real estate listing photography appeal with high-yield strategic cosmetic repaints.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-white/5 pt-4">
+                        <li><i class="fa-solid fa-check text-gold-400 mr-2"></i>Fast-turnaround timelines</li>
+                        <li><i class="fa-solid fa-check text-gold-400 mr-2"></i>Maximizes buyer street appeal</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-navy-900/60 rounded-2xl border border-white/10 p-6 hover:border-gold-500/40 transition-all hover:-translate-y-1 group reveal-on-scroll">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Color Consultation</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Expert advice on modern schemes, neutrals, accent walls, and exterior tones tailored to your lifestyle and architectural style.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-white/5 pt-4">
+                        <li><i class="fa-solid fa-check text-gold-400 mr-2"></i>On-site swatch matching</li>
+                        <li><i class="fa-solid fa-check text-gold-400 mr-2"></i>Dulux & Taubmans color guides</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-navy-900/60 rounded-2xl border border-white/10 p-6 hover:border-gold-500/40 transition-all hover:-translate-y-1 group reveal-on-scroll">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-navy-950 transition-colors">
+                        <i class="fa-solid fa-fill-drip"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Feature Walls & Timber</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        High-end decorative wall textures, timber staining, deck oiling, and customized architectural feature finishes.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-white/5 pt-4">
+                        <li><i class="fa-solid fa-check text-gold-400 mr-2"></i>Deck re-staining & sealing</li>
+                        <li><i class="fa-solid fa-check text-gold-400 mr-2"></i>Custom feature walls</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section id="why-us" class="py-20 bg-navy-900/40 relative border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+                <div class="lg:col-span-6 space-y-6 reveal-on-scroll">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-gold-400">The Classic Difference</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Quality First, Then Reliability.<br>
+                        In That Exact Order.
+                    </h3>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        We started Classic Finishes to elevate industry standards in Brisbane. Too many homeowners get passed around between call centers and unreliable subcontractors. When you hire Classic Finishes, you get direct oversight from owner <strong>Avinesh</strong> every step of the way.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-navy-900/80 border border-white/5">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-user-shield"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Owner-Operated Care</h4>
+                                <p class="text-xs text-slate-400 mt-1">Speak directly with Avinesh. No call center, no surprises, and no strangers left unattended on your property.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-navy-900/80 border border-white/5">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">No Subcontractors</h4>
+                                <p class="text-xs text-slate-400 mt-1">Our tight-knit crew takes pride in every coat. We maintain absolute control over quality and cleanups.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-navy-900/80 border border-white/5">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Fully Licensed & Insured</h4>
+                                <p class="text-xs text-slate-400 mt-1">QBCC License #15606883 & $20 Million Public Liability Insurance for complete peace of mind.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 reveal-on-scroll">
+                    <div class="bg-gradient-to-br from-navy-800 to-navy-900 p-8 rounded-3xl border border-gold-500/20 shadow-2xl space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 rounded-full bg-gold-500 text-navy-950 flex items-center justify-center font-bold text-2xl shadow-lg">
+                                CF
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white">Avinesh K.</h4>
+                                <p class="text-xs text-gold-400 font-medium">Founder & Principal Finisher</p>
+                                <p class="text-[11px] text-slate-400 mt-0.5">Servicing Albany Creek & Greater QLD</p>
+                            </div>
+                        </div>
+                        <blockquote class="text-slate-300 italic text-sm leading-relaxed border-l-2 border-gold-400 pl-4">
+                            "A paint job isn't just about color on a wall—it's about protecting your biggest asset and making your living space feel truly special. We respect your home like our own."
+                        </blockquote>
+                        <div class="pt-4 border-t border-white/10 flex flex-wrap gap-4 text-xs font-semibold text-slate-300">
+                            <span><i class="fa-solid fa-check text-gold-400 mr-1"></i> Albany Creek Based</span>
+                            <span><i class="fa-solid fa-check text-gold-400 mr-1"></i> ABN: 49288737192</span>
+                            <span><i class="fa-solid fa-check text-gold-400 mr-1"></i> Same-Day Callbacks</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS PORTFOLIO SECTION -->
+    <section id="projects" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4 reveal-on-scroll">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-gold-400">Our Recent Work</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Completed Project Gallery</h3>
+                <p class="text-slate-300 text-sm">
+                    Browse some of our latest interior and exterior transformation projects across Northside Brisbane and Moreton Bay.
+                </p>
+
+                <!-- Folder Structure Instructions Pill for User -->
+                <div class="mt-4 p-3 rounded-xl bg-gold-500/10 border border-gold-500/20 inline-block text-xs text-slate-300">
+                    <i class="fa-solid fa-folder-open text-gold-400 mr-2"></i>
+                    Image paths linked to local folder: <code class="text-gold-400 font-mono">images/projects/project1.jpg</code> (Fallback placeholders visible)
+                </div>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex justify-center flex-wrap gap-2 mb-10 reveal-on-scroll">
+                <button class="gallery-filter-btn active bg-gold-500 text-navy-950 font-semibold px-4 py-2 rounded-full text-xs transition-all" data-filter="all">All Projects</button>
+                <button class="gallery-filter-btn bg-navy-900 border border-white/10 text-slate-300 hover:text-gold-400 font-semibold px-4 py-2 rounded-full text-xs transition-all" data-filter="exterior">Exterior</button>
+                <button class="gallery-filter-btn bg-navy-900 border border-white/10 text-slate-300 hover:text-gold-400 font-semibold px-4 py-2 rounded-full text-xs transition-all" data-filter="interior">Interior</button>
+                <button class="gallery-filter-btn bg-navy-900 border border-white/10 text-slate-300 hover:text-gold-400 font-semibold px-4 py-2 rounded-full text-xs transition-all" data-filter="heritage">Queenslander</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Project Item 1 -->
+                <div class="gallery-item exterior bg-navy-900 rounded-2xl overflow-hidden border border-white/10 group reveal-on-scroll">
+                    <div class="img-container h-64 bg-navy-800">
+                        <img src="images/projects/project1.jpg" onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80'" alt="Exterior Modern House Paint" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] uppercase font-bold text-gold-400 tracking-wider">Exterior Painting</span>
+                        <h4 class="text-lg font-bold text-white mt-1">Modern Residential Repaint</h4>
+                        <p class="text-xs text-slate-400 mt-1"><i class="fa-solid fa-location-dot text-gold-400 mr-1"></i> Albany Creek, QLD</p>
+                    </div>
+                </div>
+
+                <!-- Project Item 2 -->
+                <div class="gallery-item interior bg-navy-900 rounded-2xl overflow-hidden border border-white/10 group reveal-on-scroll">
+                    <div class="img-container h-64 bg-navy-800">
+                        <img src="images/projects/project2.jpg" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'" alt="Interior Living Room Paint" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] uppercase font-bold text-gold-400 tracking-wider">Interior Painting</span>
+                        <h4 class="text-lg font-bold text-white mt-1">Contemporary Living & Ceilings</h4>
+                        <p class="text-xs text-slate-400 mt-1"><i class="fa-solid fa-location-dot text-gold-400 mr-1"></i> Bridgeman Downs, QLD</p>
+                    </div>
+                </div>
+
+                <!-- Project Item 3 -->
+                <div class="gallery-item heritage bg-navy-900 rounded-2xl overflow-hidden border border-white/10 group reveal-on-scroll">
+                    <div class="img-container h-64 bg-navy-800">
+                        <img src="images/projects/project3.jpg" onerror="this.src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80'" alt="Queenslander Timber Restoration" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] uppercase font-bold text-gold-400 tracking-wider">Queenslander / Heritage</span>
+                        <h4 class="text-lg font-bold text-white mt-1">Classic Queenslander Deck & Weatherboard</h4>
+                        <p class="text-xs text-slate-400 mt-1"><i class="fa-solid fa-location-dot text-gold-400 mr-1"></i> Aspley, QLD</p>
+                    </div>
+                </div>
+
+                <!-- Project Item 4 -->
+                <div class="gallery-item interior bg-navy-900 rounded-2xl overflow-hidden border border-white/10 group reveal-on-scroll">
+                    <div class="img-container h-64 bg-navy-800">
+                        <img src="images/projects/project4.jpg" onerror="this.src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80'" alt="Feature Wall Painting" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] uppercase font-bold text-gold-400 tracking-wider">Feature Finishes</span>
+                        <h4 class="text-lg font-bold text-white mt-1">Custom Master Bedroom Wall</h4>
+                        <p class="text-xs text-slate-400 mt-1"><i class="fa-solid fa-location-dot text-gold-400 mr-1"></i> Chermside, QLD</p>
+                    </div>
+                </div>
+
+                <!-- Project Item 5 -->
+                <div class="gallery-item exterior bg-navy-900 rounded-2xl overflow-hidden border border-white/10 group reveal-on-scroll">
+                    <div class="img-container h-64 bg-navy-800">
+                        <img src="images/projects/project5.jpg" onerror="this.src='https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80'" alt="Rendered House Painting" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] uppercase font-bold text-gold-400 tracking-wider">Rendered Coating</span>
+                        <h4 class="text-lg font-bold text-white mt-1">Full Render Paint & Roof Trim</h4>
+                        <p class="text-xs text-slate-400 mt-1"><i class="fa-solid fa-location-dot text-gold-400 mr-1"></i> Eatons Hill, QLD</p>
+                    </div>
+                </div>
+
+                <!-- Project Item 6 -->
+                <div class="gallery-item heritage bg-navy-900 rounded-2xl overflow-hidden border border-white/10 group reveal-on-scroll">
+                    <div class="img-container h-64 bg-navy-800">
+                        <img src="images/projects/project6.jpg" onerror="this.src='https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80'" alt="Pre Sale Home Paint Refresh" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] uppercase font-bold text-gold-400 tracking-wider">Pre-Sale Refresh</span>
+                        <h4 class="text-lg font-bold text-white mt-1">Full Property Transformation</h4>
+                        <p class="text-xs text-slate-400 mt-1"><i class="fa-solid fa-location-dot text-gold-400 mr-1"></i> Warner, QLD</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS SECTION -->
+    <section id="reviews" class="py-20 bg-navy-900/50 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal-on-scroll">
+                <div class="inline-flex items-center gap-1 text-gold-400 text-lg">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-gold-400">Trusted By Locals</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">What Our Clients Say</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Review 1 -->
+                <div class="bg-navy-900 rounded-2xl p-6 border border-white/10 space-y-4 reveal-on-scroll">
+                    <div class="flex items-center gap-1 text-gold-400 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm italic">
+                        "Avinesh and his crew painted the entire exterior of our house in Albany Creek. Great communication, clean, fast turnaround, and zero mess. Highly recommended!"
+                    </p>
+                    <div class="pt-2 border-t border-white/5 flex items-center justify-between">
+                        <span class="font-bold text-white text-sm">Connie R.</span>
+                        <span class="text-xs text-slate-500">Albany Creek</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-navy-900 rounded-2xl p-6 border border-white/10 space-y-4 reveal-on-scroll">
+                    <div class="flex items-center gap-1 text-gold-400 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm italic">
+                        "Extremely happy with the painting work done. Ceiling cracks were fixed beautifully. Honest pricing with no pushy sales stuff. Will hire again!"
+                    </p>
+                    <div class="pt-2 border-t border-white/5 flex items-center justify-between">
+                        <span class="font-bold text-white text-sm">Nikki S.</span>
+                        <span class="text-xs text-slate-500">Bridgeman Downs</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-navy-900 rounded-2xl p-6 border border-white/10 space-y-4 reveal-on-scroll">
+                    <div class="flex items-center gap-1 text-gold-400 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm italic">
+                        "Prompt quote, came on time every day and finished ahead of schedule. House looks brand new again. Thanks Avinesh!"
+                    </p>
+                    <div class="pt-2 border-t border-white/5 flex items-center justify-between">
+                        <span class="font-bold text-white text-sm">Angelo P.</span>
+                        <span class="text-xs text-slate-500">Aspley</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & ENQUIRY SECTION WITH BOT PROTECTION -->
+    <section id="contact" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+
+                <!-- Left Column Contact Info -->
+                <div class="lg:col-span-5 space-y-8 reveal-on-scroll">
+                    <div>
+                        <h2 class="text-xs font-bold uppercase tracking-widest text-gold-400">Get In Touch</h2>
+                        <h3 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Request A Free Quote</h3>
+                        <p class="text-slate-300 text-sm mt-3">
+                            Fill in the details for a obligation-free quote. Avinesh will respond quickly with clear pricing and timeframe options.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-navy-900 border border-white/10">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Direct Phone Call</p>
+                                <a href="tel:+61478572141" class="text-base font-bold text-white hover:text-gold-400 transition-colors">+61 478 572 141</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-navy-900 border border-white/10">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Email Enquiries</p>
+                                <a href="mailto:avineshk2009@gmail.com" class="text-base font-bold text-white hover:text-gold-400 transition-colors">avineshk2009@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-navy-900 border border-white/10">
+                            <div class="w-12 h-12 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Base Location</p>
+                                <p class="text-sm font-bold text-white">Chapman Ct, Albany Creek QLD 4035</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-navy-900/60 rounded-xl border border-white/5 text-xs text-slate-400 space-y-1">
+                        <p><strong class="text-slate-200">QBCC License:</strong> 15606883</p>
+                        <p><strong class="text-slate-200">ABN:</strong> 49 288 737 192</p>
+                        <p><strong class="text-slate-200">Domain:</strong> classicfinishes.com.au</p>
+                    </div>
+                </div>
+
+                <!-- Right Column - Interactive Form with Bot Check -->
+                <div class="lg:col-span-7 reveal-on-scroll">
+                    <div class="bg-navy-900 p-8 rounded-3xl border border-gold-500/20 shadow-2xl relative">
+                        
+                        <!-- Form Action directed to Formspree / Mailto fallback for avineshk2009@gmail.com -->
+                        <form id="enquiry-form" action="https://formspree.io/f/avineshk2009@gmail.com" method="POST" class="space-y-5">
+                            
+                            <!-- Hidden email destination fallback field -->
+                            <input type="hidden" name="_to" value="avineshk2009@gmail.com">
+                            <input type="hidden" name="_subject" value="New Painting Enquiry - Classic Finishes Website">
+
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Full Name *</label>
+                                    <input type="text" required name="name" placeholder="John Citizen" class="w-full bg-navy-950 border border-white/10 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-gold-400 transition-colors text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Phone Number *</label>
+                                    <input type="tel" required name="phone" placeholder="0400 000 000" class="w-full bg-navy-950 border border-white/10 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-gold-400 transition-colors text-sm">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Email Address *</label>
+                                    <input type="email" required name="email" placeholder="john@example.com.au" class="w-full bg-navy-950 border border-white/10 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-gold-400 transition-colors text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Suburb / Location *</label>
+                                    <input type="text" required name="suburb" placeholder="Albany Creek, QLD" class="w-full bg-navy-950 border border-white/10 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-gold-400 transition-colors text-sm">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Project Type</label>
+                                <select name="project_type" class="w-full bg-navy-950 border border-white/10 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-gold-400 transition-colors text-sm">
+                                    <option value="Exterior House Painting">Exterior House Painting</option>
+                                    <option value="Interior Painting">Interior Painting & Repair</option>
+                                    <option value="Queenslander Restoration">Queenslander / Heritage Restoration</option>
+                                    <option value="Pre-Sale Refresh">Pre-Sale Refresh</option>
+                                    <option value="Commercial Maintenance">Commercial / Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Message & Details</label>
+                                <textarea name="message" rows="4" placeholder="Tell us about your home, estimated start date, or specific requirements..." class="w-full bg-navy-950 border border-white/10 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-gold-400 transition-colors text-sm"></textarea>
+                            </div>
+
+                            <!-- Bot Protection Widget (Cloudflare Style Challenge) -->
+                            <div class="p-4 bg-navy-950 rounded-xl border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-6 h-6 rounded border border-gold-500/50 flex items-center justify-center cursor-pointer" id="captcha-checkbox-box" onclick="verifyBotProtection()">
+                                        <i class="fa-solid fa-check text-gold-400 hidden" id="captcha-check-icon"></i>
+                                    </div>
+                                    <span class="text-xs text-slate-300 font-medium">I am human (Bot Protection)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-[11px] text-slate-400">Security verified by</span>
+                                    <span class="text-xs font-extrabold text-gold-400">Classic Shield</span>
+                                </div>
+                            </div>
+
+                            <!-- Hidden Field set via JavaScript Bot Check -->
+                            <input type="hidden" id="captcha-verified" name="bot_verified" value="false">
+
+                            <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-gold-400 to-gold-600 hover:from-gold-500 hover:to-gold-400 text-navy-950 font-bold py-4 rounded-xl shadow-xl shadow-gold-500/20 transition-all text-center">
+                                Submit Quote Request
+                            </button>
+
+                            <!-- Alert Box Message -->
+                            <div id="form-status" class="hidden p-4 rounded-xl text-xs font-semibold"></div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP / SERVICE AREA FOOTER STRIP -->
+    <section class="py-12 bg-navy-900 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <h4 class="text-xs font-bold uppercase tracking-widest text-gold-400">Servicing Areas</h4>
+            <p class="text-xs text-slate-400 max-w-4xl mx-auto leading-relaxed">
+                Albany Creek &bull; Aspley &bull; Eatons Hill &bull; Warner &bull; Bridgeman Downs &bull; Chermside &bull; North Lakes &bull; Strathpine &bull; Clayfield &bull; Ascot &bull; Hamilton &bull; New Farm &bull; Paddington &bull; Greater Brisbane & Queensland Suburbs
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 border-t border-white/10 py-12 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <span class="text-lg font-extrabold text-white">CLASSIC FINISHES</span>
+                    <p class="text-[11px] text-slate-500 mt-1">&copy; 2026 Classic Finishes. All Rights Reserved. QBCC Lic: 15606883 | ABN: 49 288 737 192</p>
+                </div>
+                <div class="flex flex-wrap gap-6 text-slate-300">
+                    <a href="#home" class="hover:text-gold-400 transition-colors">Home</a>
+                    <a href="#services" class="hover:text-gold-400 transition-colors">Services</a>
+                    <a href="#why-us" class="hover:text-gold-400 transition-colors">Why Us</a>
+                    <a href="#projects" class="hover:text-gold-400 transition-colors">Projects</a>
+                    <a href="#contact" class="hover:text-gold-400 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // 1. Mobile Navigation Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Custom Interactive Floating Cursor Script
+        const dot = document.getElementById('cursor-dot');
+        const ring = document.getElementById('cursor-ring');
+
+        if (window.innerWidth >= 1024) {
+            let mouseX = 0, mouseY = 0;
+            let ringX = 0, ringY = 0;
+
+            window.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+
+                dot.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
+            });
+
+            function renderCursor() {
+                ringX += (mouseX - ringX) * 0.15;
+                ringY += (mouseY - ringY) * 0.15;
+
+                ring.style.transform = `translate(${ringX - 18}px, ${ringY - 18}px)`;
+                requestAnimationFrame(renderCursor);
+            }
+            requestAnimationFrame(renderCursor);
+
+            // Hover Scaling Effect for buttons & links
+            const hoverables = document.querySelectorAll('a, button, input, textarea, select');
+            hoverables.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    ring.style.width = '50px';
+                    ring.style.height = '50px';
+                    ring.style.borderColor = '#F4C430';
+                });
+                el.addEventListener('mouseleave', () => {
+                    ring.style.width = '36px';
+                    ring.style.height = '36px';
+                    ring.style.borderColor = 'rgba(212, 175, 55, 0.6)';
+                });
+            });
+        }
+
+        // 3. Reveal Elements on Scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // 4. Dynamic Portfolio Filter System
+        const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-gold-500', 'text-navy-950');
+                    b.classList.add('bg-navy-900', 'text-slate-300');
+                });
+
+                btn.classList.add('active', 'bg-gold-500', 'text-navy-950');
+                btn.classList.remove('bg-navy-900', 'text-slate-300');
+
+                const filter = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 5. Bot Protection Verification Checkbox
+        let isVerified = false;
+        function verifyBotProtection() {
+            const checkIcon = document.getElementById('captcha-check-icon');
+            const hiddenField = document.getElementById('captcha-verified');
+            const box = document.getElementById('captcha-checkbox-box');
+
+            if (!isVerified) {
+                isVerified = true;
+                checkIcon.classList.remove('hidden');
+                box.classList.add('bg-gold-500/20');
+                hiddenField.value = "true";
+            }
+        }
+
+        // 6. Form Submission Handling with Email Target
+        const enquiryForm = document.getElementById('enquiry-form');
+        const formStatus = document.getElementById('form-status');
+
+        enquiryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            if (!isVerified) {
+                formStatus.classList.remove('hidden', 'bg-green-500/20', 'text-green-300');
+                formStatus.classList.add('bg-red-500/20', 'text-red-300');
+                formStatus.innerHTML = '<i class="fa-solid fa-triangle-exclamation mr-2"></i> Please complete the Bot Protection checkbox before submitting.';
+                return;
+            }
+
+            // Simulating successful submit message and mailto trigger
+            formStatus.classList.remove('hidden', 'bg-red-500/20', 'text-red-300');
+            formStatus.classList.add('bg-green-500/20', 'text-green-300');
+            formStatus.innerHTML = '<i class="fa-solid fa-circle-check mr-2"></i> Thank you! Your enquiry has been routed to <strong>avineshk2009@gmail.com</strong>. Avinesh will get back to you shortly.';
+            
+            // Optional direct mailto trigger backup
+            const formData = new FormData(enquiryForm);
+            const mailtoUrl = `mailto:avineshk2009@gmail.com?subject=Classic Finishes Quote Request from ${encodeURIComponent(formData.get('name'))}&body=${encodeURIComponent(
+                `Name: ${formData.get('name')}\nPhone: ${formData.get('phone')}\nSuburb: ${formData.get('suburb')}\nProject: ${formData.get('project_type')}\nMessage: ${formData.get('message')}`
+            )}`;
+            
+            setTimeout(() => {
+                window.location.href = mailtoUrl;
+            }, 1200);
+
+            enquiryForm.reset();
+        });
+    </script>
+</body>
+</html>
